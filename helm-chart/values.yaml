@@ -1,6 +1,6 @@
 # MySQL settings
 mysql:
-  image: "mysql:8"
+  image: "stephen931995/php-app:EXISTING_TAG"
   rootPassword: "rootpassword"
   database: "echo_digital_works"
   initSql: "init.sql"
@@ -11,7 +11,7 @@ pvc:
 # Frontend settings
 frontend:
   replicaCount: 1
-  image: "stephen931995/php-app:14"
+  image: "stephen931995/php-app:EXISTING_TAG"
   containerPort: 80
   service:
     type: LoadBalancer
