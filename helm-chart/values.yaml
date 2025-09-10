@@ -1,0 +1,25 @@
+# MySQL settings
+mysql:
+  image: "mysql:8"
+  rootPassword: "rootpassword"
+  database: "echo_digital_works"
+  initSql: "init.sql"
+
+# Persistent Volume settings
+pvc:
+  size: 5Gi
+  storageClassName: "kops-csi-1-21"
+# Frontend settings
+frontend:
+  replicaCount: 1
+  image: "venkateshvgs/php-app:14"
+  containerPort: 80
+  service:
+    type: LoadBalancer
+    port: 80
+  env:
+    DB_HOST: "mysql-service"
+    DB_USER: "root"
+    DB_PASSWORD: "rootpassword"
+    DB_NAME: "echo_digital_works"
+
