@@ -13,7 +13,7 @@ frontend:
   replicaCount: 1
   image:
     repository: stephen931995/php-app
-    tag: "5"
+    tag: "6"
   containerPort: 80
   service:
     type: LoadBalancer
